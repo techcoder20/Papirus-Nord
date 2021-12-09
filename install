@@ -3,29 +3,7 @@
 PREFIX="Icons"
 LOCAL="/usr/share/icons/Papirus"
 
-echo "Welcome to the Papirus Nord installer!"
-echo "For better usage, run this script as a superuser (sudo)!"
-
-echo -n "Have you previously installed the Papirus' Linux Universe version? (Type Y or N) "
-read cond
-
-if [[ ( $cond != "Y" ) && ( $cond != "N" ) ]]
-then
-    echo "Please enter a valid option!"
-    exit 0
-fi
-
-install() {
-if [ $cond = "Y" ]
-then
-    cp -f papirus-folders1 /usr/bin/papirus-folders
-else
-    if [ $cond = "N" ]
-    then
-        cp -f papirus-folders /usr/bin
-    fi
-fi
-}
+cp -f papirus-folders1 /usr/bin/papirus-folders
 
 if [ ! $USER = "root" ]
 then
